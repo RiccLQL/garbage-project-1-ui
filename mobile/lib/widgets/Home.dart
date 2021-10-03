@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:mobile/widgets/Camera.dart';
+import 'package:mobile/widgets/DisposalResource.dart';
 import 'package:mobile/widgets/TopBar.dart';
 import 'package:http/http.dart' as http;
 
@@ -161,7 +162,7 @@ class _HomeState extends State<Home> {
                               fontSize: 14,
                               color: Colors.white,
                             )),
-                        onPressed: () async {},
+                        onPressed: null,
                         style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(Colors.grey),
@@ -215,7 +216,7 @@ class _HomeState extends State<Home> {
                               textAlign: TextAlign.center),
                         ),
                       if (uploadedImage.status == 'Success' &&
-                          imageResult.status == 'Done') Row(
+                          imageResult.status == 'Done' && imageResult.result == 'batteries') Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           TextButton(
@@ -223,7 +224,7 @@ class _HomeState extends State<Home> {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ),
+                                MaterialPageRoute(builder: (context) => DisposalResource(category: imageResult.result)),
                               );
                             },
                           ),
