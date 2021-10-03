@@ -17,6 +17,14 @@ class TopBar extends StatefulWidget implements PreferredSizeWidget {
 class _CustomAppBarState extends State<TopBar> {
   @override
   Widget build(BuildContext context) {
-    return AppBar(title: widget.title);
+    return AppBar(
+      title: widget.title,
+      backgroundColor: Colors.brown,
+      titleTextStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.white, 
+        fontSize: 24.0),
+      elevation: 0.0,
+    );
   }
 }
